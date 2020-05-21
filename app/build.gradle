@@ -1,0 +1,43 @@
+apply from: '../dependencies.gradle'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+  compileSdkVersion versions.compileSdk
+  buildToolsVersion versions.buildTools
+
+  defaultConfig {
+    applicationId "com.afollestad.photoaffix"
+    minSdkVersion versions.minSdk
+    targetSdkVersion versions.compileSdk
+    versionCode versions.publishVersionCode
+    versionName versions.publishVersion
+  }
+}
+
+dependencies {
+  implementation project(':prefs')
+  implementation project(':viewcomponents')
+  implementation project(':dialogs')
+  implementation project(':utilities')
+  implementation project(':engine')
+
+  implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:' + versions.kotlin
+
+  implementation 'com.google.dagger:dagger:' + versions.dagger
+  kapt 'com.google.dagger:dagger-compiler:' + versions.dagger
+
+  implementation 'com.afollestad.material-dialogs:core:' + versions.materialDialogs
+  implementation 'com.afollestad.material-dialogs:color:' + versions.materialDialogs
+  implementation 'com.afollestad:drag-select-recyclerview:' + versions.dragSelectRv
+  implementation 'com.afollestad:assent:' + versions.assent
+
+  testImplementation 'junit:junit:' + versions.junit
+  testImplementation 'org.mockito:mockito-core:' + versions.mockito
+  testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:' + versions.mockitoKotlin
+  testImplementation 'com.google.truth:truth:' + versions.truth
+}
+
+apply from: '../spotless.gradle'

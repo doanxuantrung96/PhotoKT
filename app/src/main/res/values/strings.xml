@@ -1,0 +1,13 @@
+<resources>
+
+  <string name="app_name">PhotoFix</string>
+
+  <string name="affix_zero">Affix (0)</string>
+  <string name="affix_x">Affix (%1$d)</string>
+  <string name="clear">Clear</string>
+
+  <string name="error">Error</string>
+  <string name="no_photos_found">No local photos were found!</string>
+  <string name="need_two_or_more">You need two or more images!</string>
+
+</resources>
